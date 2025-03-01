@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Container } from "@/components/ui/container";
+import { Button } from "@/components/ui/button";
+import { ArrowLeft } from "lucide-react";
 import SearchFilters from "./SearchFilters";
 import SearchResults from "./SearchResults";
 import ItemDetailView from "./ItemDetailView";
@@ -201,6 +203,15 @@ const SearchPage = ({ initialItems }: SearchPageProps = {}) => {
     <div className="min-h-screen bg-gray-50">
       <Container className="py-8">
         <div className="mb-8">
+          <div className="flex items-center gap-2 mb-1">
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => window.history.back()}
+            >
+              <ArrowLeft className="h-4 w-4 mr-1" /> Back
+            </Button>
+          </div>
           <h1 className="text-3xl font-bold tracking-tight">
             Inventory Search
           </h1>

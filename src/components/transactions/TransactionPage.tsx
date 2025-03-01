@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
-import { PlusCircle, FileDown, Printer } from "lucide-react";
+import { PlusCircle, FileDown, Printer, ArrowLeft } from "lucide-react";
 import TransactionFilters from "./TransactionFilters";
 import TransactionTable from "./TransactionTable";
 import TransactionForm from "./TransactionForm";
@@ -52,6 +52,15 @@ const TransactionPage: React.FC<TransactionPageProps> = ({
     <div className="container mx-auto p-6 bg-gray-50 min-h-screen">
       <div className="flex justify-between items-center mb-6">
         <div>
+          <div className="flex items-center gap-2 mb-1">
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => window.history.back()}
+            >
+              <ArrowLeft className="h-4 w-4 mr-1" /> Back
+            </Button>
+          </div>
           <h1 className="text-2xl font-bold text-gray-900">Transaction Log</h1>
           <p className="text-gray-500">
             Track and manage inventory transactions

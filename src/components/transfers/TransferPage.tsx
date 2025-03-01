@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
+import { ArrowLeft } from "lucide-react";
 import Sidebar from "../layout/Sidebar";
 import PendingTransfers from "./PendingTransfers";
 import TransferForm from "./TransferForm";
@@ -43,6 +44,15 @@ const TransferPage: React.FC<TransferPageProps> = ({
 
       <div className="flex-1 overflow-auto p-6">
         <div className="mb-6">
+          <div className="flex items-center gap-2 mb-1">
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => window.history.back()}
+            >
+              <ArrowLeft className="h-4 w-4 mr-1" /> Back
+            </Button>
+          </div>
           <h1 className="text-2xl font-bold text-gray-900">
             Transfer Management
           </h1>

@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { ArrowLeft } from "lucide-react";
 import ReportSelector from "./ReportSelector";
 import ReportDisplay from "./ReportDisplay";
 
@@ -43,6 +45,11 @@ const ReportingPage = ({ defaultReportType = "usage" }: ReportingPageProps) => {
 
   return (
     <div className="container mx-auto p-6 bg-gray-50 min-h-screen">
+      <div className="flex items-center gap-2 mb-1">
+        <Button variant="ghost" size="sm" onClick={() => window.history.back()}>
+          <ArrowLeft className="h-4 w-4 mr-1" /> Back
+        </Button>
+      </div>
       <h1 className="text-3xl font-bold mb-8">Reporting Dashboard</h1>
 
       <div className="space-y-8">

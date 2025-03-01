@@ -36,28 +36,14 @@ const Home = () => {
         </div>
 
         <div className="space-y-6">
-          <InventoryOverview />
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <LowStockAlerts
-              onViewDetails={handleViewItemDetails}
-              onOrderSupplies={handleOrderSupplies}
-            />
-
-            <RecentTransactions
-              onViewAll={handleViewAllTransactions}
-              onViewTransaction={handleViewTransaction}
-            />
-          </div>
-
-          <div className="mt-8 flex justify-between items-center">
+          <div className="mb-6 flex justify-between items-center">
             <div>
               <h2 className="text-xl font-semibold">Quick Actions</h2>
               <p className="text-gray-500">Common inventory management tasks</p>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
             <Link to="/transactions">
               <div className="p-6 bg-white rounded-lg shadow-sm border hover:shadow-md transition-shadow">
                 <div className="flex items-center justify-between">
@@ -96,6 +82,20 @@ const Home = () => {
                 </div>
               </div>
             </Link>
+          </div>
+
+          <InventoryOverview />
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <LowStockAlerts
+              onViewDetails={handleViewItemDetails}
+              onOrderSupplies={handleOrderSupplies}
+            />
+
+            <RecentTransactions
+              onViewAll={handleViewAllTransactions}
+              onViewTransaction={handleViewTransaction}
+            />
           </div>
         </div>
       </div>
