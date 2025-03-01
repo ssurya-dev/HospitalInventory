@@ -126,12 +126,13 @@ const Sidebar = ({ className }: SidebarProps = {}) => {
         <NavItem icon={Search} label="Inventory Search" href="/search" />
         <NavItem icon={FileBarChart} label="Reporting" href="/reports" />
 
-        <div className="mt-2 mb-2">
-          <div className="flex items-center px-3 py-2 text-muted-foreground">
+        <div className="mt-2 mb-2 group relative">
+          <div className="flex items-center px-3 py-2 text-muted-foreground cursor-pointer hover:text-primary">
             <ShieldAlert className="h-5 w-5 mr-2" />
             <span className="font-medium">Admin</span>
+            <ChevronRight className="ml-auto h-4 w-4 transition-transform group-hover:rotate-90" />
           </div>
-          <div className="pl-4">
+          <div className="pl-4 max-h-0 overflow-hidden transition-all duration-300 group-hover:max-h-24">
             <NavItem
               icon={Building2}
               label="Hospital Management"
