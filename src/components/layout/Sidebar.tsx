@@ -11,6 +11,13 @@ import {
   Menu,
   X,
   Package,
+  Plus,
+  Minus,
+  Building2,
+  Users,
+  ShieldAlert,
+  ChevronDown,
+  ChevronRight,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -100,6 +107,12 @@ const Sidebar = ({ className }: SidebarProps = {}) => {
           href="/"
           active={true}
         />
+        <NavItem icon={Plus} label="Book In" href="/transactions?tab=book-in" />
+        <NavItem
+          icon={Minus}
+          label="Book Out"
+          href="/transactions?tab=book-out"
+        />
         <NavItem
           icon={ClipboardList}
           label="Transaction Log"
@@ -110,8 +123,23 @@ const Sidebar = ({ className }: SidebarProps = {}) => {
           label="Transfer Management"
           href="/transfers"
         />
-        <NavItem icon={Search} label="Search & Filter" href="/search" />
+        <NavItem icon={Search} label="Inventory Search" href="/search" />
         <NavItem icon={FileBarChart} label="Reporting" href="/reports" />
+
+        <div className="mt-2 mb-2">
+          <div className="flex items-center px-3 py-2 text-muted-foreground">
+            <ShieldAlert className="h-5 w-5 mr-2" />
+            <span className="font-medium">Admin</span>
+          </div>
+          <div className="pl-4">
+            <NavItem
+              icon={Building2}
+              label="Hospital Management"
+              href="/hospitals"
+            />
+            <NavItem icon={Users} label="User Management" href="/users" />
+          </div>
+        </div>
       </div>
 
       <Separator className="my-6" />

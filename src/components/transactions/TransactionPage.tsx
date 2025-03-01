@@ -14,7 +14,10 @@ const TransactionPage: React.FC<TransactionPageProps> = ({
   defaultTab = "view",
 }) => {
   const [activeTab, setActiveTab] = useState<"view" | "book-in" | "book-out">(
-    defaultTab,
+    (new URLSearchParams(window.location.search).get("tab") as
+      | "view"
+      | "book-in"
+      | "book-out") || defaultTab,
   );
   const [showFilters, setShowFilters] = useState(true);
   const [isExporting, setIsExporting] = useState(false);
