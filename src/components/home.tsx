@@ -4,6 +4,13 @@ import Sidebar from "./layout/Sidebar";
 import InventoryOverview from "./dashboard/InventoryOverview";
 import LowStockAlerts from "./dashboard/LowStockAlerts";
 import RecentTransactions from "./dashboard/RecentTransactions";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 const Home = () => {
   const handleViewAllTransactions = () => {
@@ -28,11 +35,41 @@ const Home = () => {
       <Sidebar />
 
       <div className="flex-1 overflow-auto p-6">
-        <div className="mb-6">
-          <h1 className="text-3xl font-bold">Dashboard</h1>
-          <p className="text-gray-500">
-            Hospital Department Inventory Management
-          </p>
+        <div className="mb-6 flex justify-between items-center">
+          <div>
+            <h1 className="text-3xl font-bold">Dashboard</h1>
+            <p className="text-gray-500">
+              Hospital Department Inventory Management
+            </p>
+          </div>
+          <div className="flex items-center gap-4">
+            <Select defaultValue="general">
+              <SelectTrigger className="w-[200px]">
+                <SelectValue placeholder="Select Hospital" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="general">General Hospital</SelectItem>
+                <SelectItem value="children">
+                  Children's Medical Center
+                </SelectItem>
+                <SelectItem value="university">
+                  University Medical Center
+                </SelectItem>
+              </SelectContent>
+            </Select>
+
+            <Select defaultValue="en">
+              <SelectTrigger className="w-[150px]">
+                <SelectValue placeholder="Language" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="en">English</SelectItem>
+                <SelectItem value="es">Spanish</SelectItem>
+                <SelectItem value="fr">French</SelectItem>
+                <SelectItem value="de">German</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
         </div>
 
         <div className="space-y-6">
