@@ -39,7 +39,6 @@ const Home = () => {
           <div className="mb-6 flex justify-between items-center">
             <div>
               <h2 className="text-xl font-semibold">Quick Actions</h2>
-              <p className="text-gray-500">Common inventory management tasks</p>
             </div>
           </div>
 
